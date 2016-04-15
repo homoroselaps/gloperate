@@ -10,9 +10,9 @@
 #include <gloperate/pipeline/InputSlot.h>
 #include <gloperate/pipeline/Data.h>
 #include <gloperate/pipeline/AbstractStage.h>
-#include <gloperate-text/geometry/GlyphVertexCloud.h>
 
 #include <gloperate-text/gloperate-text_api.h>
+#include <gloperate-text/GlyphVertexCloud.h>
 
 
 namespace gloperate
@@ -27,8 +27,8 @@ class AbstractTargetFramebufferCapability;
 namespace gloperate_text
 {
 
-
 class GlyphRenderer;
+
 
 class GLOPERATE_TEXT_API GlyphRenderStage : public gloperate::AbstractStage
 {
@@ -36,16 +36,16 @@ public:
     GlyphRenderStage();
     virtual ~GlyphRenderStage();
 
-    gloperate::InputSlot<GlyphVertexCloud> vertices;
-    gloperate::InputSlot<reflectionzeug::Color> fontColor;
-    gloperate::InputSlot<float> distanceThreshold;
+    gloperate::InputSlot<GlyphVertexCloud> vertexCloud;
 
     gloperate::InputSlot<gloperate::AbstractViewportCapability *> viewport;
     gloperate::InputSlot<gloperate::AbstractTargetFramebufferCapability *> targetFramebuffer;
+
 protected:
     virtual void initialize() override;
     virtual void process() override;
 
+protected:
     std::unique_ptr<GlyphRenderer> m_renderer;
 };
 
