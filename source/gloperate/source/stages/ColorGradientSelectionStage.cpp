@@ -7,6 +7,7 @@ namespace gloperate
 {
 
 ColorGradientSelectionStage::ColorGradientSelectionStage()
+    : gradientName()
 {
     addInput("gradients", gradients);
     addInput("gradientName", gradientName);

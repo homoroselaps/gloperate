@@ -11,20 +11,24 @@
 namespace gloperate 
 {
 
-
-template <typename T>
-const T InputSlot<T>::s_defaultValue = T();
-
+    
 template <typename T>    
 InputSlot<T>::InputSlot()
 : m_data(nullptr)
+, m_defaultValue()
 {
+}
+
+template <typename T>
+void InputSlot<T>::setDefault(const T& defaultValue)
+{
+    m_defaultValue = defaultValue;
 }
 
 template <typename T>
 const T & InputSlot<T>::data() const
 {
-    return data(s_defaultValue);
+    return data(m_defaultValue);
 }
 
 template <typename T>

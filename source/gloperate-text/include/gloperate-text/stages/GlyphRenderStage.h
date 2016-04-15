@@ -10,6 +10,7 @@
 #include <gloperate/pipeline/InputSlot.h>
 #include <gloperate/pipeline/Data.h>
 #include <gloperate/pipeline/AbstractStage.h>
+#include <gloperate-text/geometry/GlyphVertexCloud.h>
 
 #include <gloperate-text/gloperate-text_api.h>
 
@@ -27,7 +28,6 @@ namespace gloperate_text
 {
 
 
-class GlyphVertexCloud;
 class GlyphRenderer;
 
 class GLOPERATE_TEXT_API GlyphRenderStage : public gloperate::AbstractStage

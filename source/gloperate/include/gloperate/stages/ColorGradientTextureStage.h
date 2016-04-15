@@ -9,14 +9,13 @@
 #include <gloperate/pipeline/AbstractStage.h>
 #include <gloperate/pipeline/InputSlot.h>
 #include <gloperate/pipeline/Data.h>
+#include <gloperate/base/ColorGradientList.h>
 
 #include <gloperate/gloperate_api.h>
 
 
 namespace gloperate
 {
-
-class ColorGradientList;
 
 class GLOPERATE_API ColorGradientTextureStage : public gloperate::AbstractStage
 {

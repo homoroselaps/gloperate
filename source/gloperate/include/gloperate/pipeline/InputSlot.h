@@ -36,6 +36,7 @@ class InputSlot : public AbstractInputSlot
 public:
     InputSlot();
 
+    void setDefault(const T& defaultValue);
     const T & data() const;
     const T & data(const T & defaultValue) const;
     const T & operator*() const;
@@ -62,9 +63,8 @@ protected:
     const Data<T> * m_data;
     signalzeug::ScopedConnection m_connection;
 
-    static const T s_defaultValue;
+    T m_defaultValue;
 };
-
 
 } // namespace gloperate
 
